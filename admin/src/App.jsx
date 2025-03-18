@@ -43,7 +43,7 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route path="*" element={<Navigate to="/admin/login" />} />
+          <Route path="*" element={<Navigate to="/admin/dashboard" />} />
         </Routes>
       </AuthProvider>
     </Router>
