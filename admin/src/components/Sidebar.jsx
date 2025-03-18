@@ -27,22 +27,22 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
         } md:translate-x-0 transition-transform duration-300 ease-in-out`}
       >
         <div className="flex justify-between items-center">
-          <h2 className="text-2xl font-semibold">e-Nivaran</h2>
+          <h2 className="text-2xl font-semibold text-blue-700">e-Nivaran</h2>
           <button className="md:hidden" onClick={() => setSidebarOpen(false)}>
             { sidebarOpen ? <RxCross1 className="text-2xl font-bold text-gray-600" /> : <HiOutlineMenuAlt2 className="text-2xl" />}
             {/* <HiOutlineMenuAlt2 className="text-2xl" />
             <X /> */}
           </button>
         </div>
-        <p className="text-sm text-gray-600 mb-6">Admin Portal</p>
+        <p className="text-xs text-gray-600 mb-6">Authority Portal</p>
 
         <nav className="space-y-4">
           {menuItems.map((item) => (
             <Link
               key={item.name}
               to={item.path}
-              className={`flex items-center gap-2 p-2 rounded-lg text-gray-700 hover:bg-gray-200 ${
-                location.pathname === item.path ? "bg-gray-200" : ""
+              className={`flex items-center gap-2 p-2 rounded-lg text-gray-800 hover:bg-blue-200 transition delay-50 ${
+                location.pathname === item.path ? "bg-blue-500 text-white hover:bg-blue-500 hover:text-white" : ""
               }`}
             >
               {item.icon} {item.name}

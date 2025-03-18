@@ -49,8 +49,8 @@ const Dashboard = () => {
               { title: "Pending", value: "296" },
               { title: "Avg. Resolution Time", value: "48h" },
             ].map((stat, index) => (
-              <div key={index} className="bg-white p-4 rounded-lg shadow-md">
-                <h3 className="text-gray-600 text-md">{stat.title}</h3>
+              <div key={index} className="bg-white p-4 rounded-lg shadow-md ">
+                <h3 className="text-slate-600 text-md">{stat.title}</h3>
                 <p className="text-2xl font-bold">{stat.value}</p>
               </div>
             ))}
@@ -63,7 +63,7 @@ const Dashboard = () => {
             <div className="">
               <table className="table-auto w-full mt-4 border-collapse"> 
                 <thead>
-                  <tr className="bg-gray-200 border border-2 border-gray-300">
+                  <tr className="bg-blue-500 text-white border-2  border-blue-500">
                     <th className="px-4 py-2">ID</th>
                     <th className="px-4 py-2">Subject</th>
                     <th className="px-4 py-2">Department</th>
@@ -74,12 +74,12 @@ const Dashboard = () => {
                 </thead>
                 <tbody>
                   <tr className="border-b-2 border-x-2 text-sm border-gray-300">
-                    <td className="px-4 py-2 text-center">sdfkjasdfk</td>
-                    <td className="px-4 py-2 text-center">sdfkjasdfk</td>
-                    <td className="px-4 py-2 text-center">sdfkjasdfk</td>
-                    <td className="px-4 py-2 text-center">sdfkjasdfk</td>
-                    <td className="px-4 py-2 text-center">sdfkjasdfk</td>
-                    <td className="px-4 py-2 text-center">sdfkjasdfk</td>
+                    <td className="px-4 py-2 text-center">COMP-2023-12345</td>
+                    <td className="px-4 py-2 text-center">Water Supply Issue</td>
+                    <td className="px-4 py-2 text-center">Water Supply</td>
+                    <td className="px-4 py-2 text-center">15 Mar 2024</td>
+                    <td className="px-4 py-2 text-center">In Progess</td>
+                    <td className="px-4 py-2 text-center">Action</td>
                   </tr>
                 </tbody>  
               </table>

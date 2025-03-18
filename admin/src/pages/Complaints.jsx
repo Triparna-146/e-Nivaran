@@ -49,13 +49,13 @@ const Complaints = () => {
             <p className="text-gray-600 text-sm">Latest Complains recieved in the system</p> 
             */}
 
-            <div className="flex justify-between text-sm bg-gray-100 p-2 w-lg rounded-md mb-6">
+            <div className="flex justify-between text-sm bg-blue-200 p-2 w-lg rounded-md mb-6">
                 {["All", "New", "Assigned", "In Progress", "Resolved"].map((filter) => (
                 <button
                     key={filter}
                     onClick={() => setSelectedFilter(filter)}
                     className={`px-3 py-1 w-full rounded-md ${
-                    selectedFilter === filter ? "bg-white shadow-sm" : "text-gray-500"
+                    selectedFilter === filter ? "bg-blue-500 text-white shadow-sm" : "text-slate-800"
                     }`}
                 >
                     {filter}
@@ -64,9 +64,9 @@ const Complaints = () => {
             </div>
             
             <div className="">
-              <table className="table-auto w-full mt-4"> 
+            <table className="w-full mt-4 border-collapse"> 
                 <thead>
-                  <tr className="bg-gray-200 border-2 border-gray-300">
+                  <tr className="bg-blue-500 text-white border-2  border-blue-500">
                     <th className="px-4 py-2">ID</th>
                     <th className="px-4 py-2">Subject</th>
                     <th className="px-4 py-2">Department</th>
@@ -76,13 +76,13 @@ const Complaints = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className='border-b-2 border-x-2 text-sm border-gray-300'>
-                    <td className="px-4 py-2 text-center">sdfkjasdfk</td>
-                    <td className="px-4 py-2 text-center">sdfkjasdfk</td>
-                    <td className="px-4 py-2 text-center">sdfkjasdfk</td>
-                    <td className="px-4 py-2 text-center">sdfkjasdfk</td>
-                    <td className="px-4 py-2 text-center">sdfkjasdfk</td>
-                    <td className="px-4 py-2 text-center">sdfkjasdfk</td>
+                  <tr className="border-b-2 border-x-2 text-sm border-gray-300">
+                    <td className="px-4 py-2 text-center">COMP-2023-12345</td>
+                    <td className="px-4 py-2 text-center">Water Supply Issue</td>
+                    <td className="px-4 py-2 text-center">Water Supply</td>
+                    <td className="px-4 py-2 text-center">15 Mar 2024</td>
+                    <td className="px-4 py-2 text-center">In Progess</td>
+                    <td className="px-4 py-2 text-center">Action</td>
                   </tr>
                 </tbody>  
               </table>
