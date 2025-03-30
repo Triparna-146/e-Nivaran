@@ -1,15 +1,17 @@
+import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FiLogOut } from "react-icons/fi";
 import { RiDashboardLine } from "react-icons/ri";
 import { FaFileAlt } from "react-icons/fa";
 import { MdOutlineAnalytics } from "react-icons/md";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
-import { useAuth } from "../context/AuthContext";
 import { RxCross1 } from "react-icons/rx";
+import { AdminContext } from "../context/AdminContext";
 
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
-  const { logout } = useAuth();
+ 
+  const { logout } = useContext(AdminContext)
   const location = useLocation();
 
   const menuItems = [

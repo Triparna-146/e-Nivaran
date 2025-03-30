@@ -1,22 +1,29 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FaUserShield } from "react-icons/fa";
 import { useAuth } from "../context/AuthContext";
+import { AdminContext } from "../context/AdminContext";
+import Axios from "axios";
 
 const AdminLogin = () => {
-  const { login } = useAuth();
+  // const { login } = useAuth();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  
+  const {setAToken, backendUrl} = useContext(AdminContext);
 
-  const handleLogin = (e) => {
+  const handleLogin = async(e) => {
     e.preventDefault();
-    setError("");
-
-    // Dummy validation, replace with actual authentication logic
-    if (username === "admin" && password === "admin123") {
-        login("dummyToken");
-    } else {
-      setError("Invalid username or password");
+    try {
+      const {data} = await Axios.post(backendUrl + '/api/admin/login', {user: username, password})
+      if(data.success) {
+        localStorage.setItem('aToken', data.token);
+        setAToken(data.token);
+      } else {
+        throw new Error(data.message)
+      }
+    } catch (error) {
+      console.log(error.message);
+      
     }
   };
 
@@ -33,9 +40,9 @@ const AdminLogin = () => {
           Sign in to manage the complaint
         </p>
 
-        {error && (
+        {/* {error && (
           <p className="text-red-600 text-sm text-center mb-4">{error}</p>
-        )}
+        )} */}
 
         <form onSubmit={handleLogin} className="space-y-4">
           <div className="mb-6">
